@@ -1,0 +1,247 @@
+$font-family: 'Inter', sans-serif;
+$colorgris1: hsl(227, 47%, 96%);
+$colorgristext: hsl(228, 12%, 44%);
+$colorgristext2: hsl(230, 17%, 14%);
+
+body{
+    font-family: $font-family;
+    background-color: hsl(0, 0%, 100%);
+    font-size: 14px;
+    padding-left: 150px;
+    padding-right: 150px;
+    transition: .3s ease all;
+}
+body.dark{
+    background-color: hsl(230, 17%, 14%);
+    h1{
+        color: white;
+    }
+}
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .head{
+        h1{
+            margin-bottom: 0;
+            color: $colorgristext2;
+
+            body.dark & {
+                color: white;
+            }
+        }
+        p{
+            margin-top: 5px;
+        }
+    }
+    p{
+        font-weight: 700;;
+        color: $colorgristext;
+        body.dark & {
+            color: hsl(228, 34%, 66%);
+        }
+    }
+    .mode{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .switch{
+            margin-left: 10px;
+            background-image: linear-gradient(to right, #378EE6, #3EDA81);
+            border-radius: 1000px;
+            width: 40px;
+            height: 20px;
+            border: none;
+            position: relative;
+            cursor: pointer;
+            outline: none;
+            &::after{
+                content: "";
+                display: block;
+                width: 16px;
+                height: 16px;
+                background-color: white;
+                position: absolute;
+                top: 2px;
+                bottom: 2px;
+                right: 2px;
+                left: unset;
+                border-radius: 100px;
+            }
+        }
+        .switch.active{
+            &::after{
+                background-color:hsl(230, 22%, 74%);
+                top: 2px;
+                bottom: 2px;
+                right: unset;
+                left: 2px;
+            }
+        }
+    }
+}
+main{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    article{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 260px;
+        height: 230px;
+        border-top: 4px solid hsl(203, 89%, 53%);
+        border-radius: 5px;
+        background-color: hsl(225, 100%, 98%);
+        body.dark & {
+            background-color: hsl(232, 19%, 15%);
+        }
+        body.dark &:hover{
+            background-color:hsl(228, 28%, 20%);
+        }
+        .user{
+            display: flex;
+            flex-direction: row;
+            p{
+                font-weight: 700;
+                color: $colorgristext;
+                margin: 0;
+                padding-left: 10px;
+                body.dark & {
+                    color: hsl(228, 34%, 66%);
+                }
+            }
+        }
+        .numero{
+            font-size: 60px;
+            font-weight: 700;
+            color: $colorgristext2;
+            margin-top: 20px;
+            margin-bottom: 0;
+            body.dark & {
+                color: white;
+            }
+        }
+        .follow{
+            margin-top: 0;
+            color: $colorgristext;
+            letter-spacing: 5px;
+            body.dark & {
+                color: hsl(228, 34%, 66%);
+            }
+        }
+        .followers{
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            span{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-right: 5px;
+            }
+            p{
+                margin: 0;
+                color: hsl(163, 72%, 41%);
+                font-weight: 700;
+            }
+        }
+    }
+    .twitter{
+        border-top: 4px solid hsl(195, 100%, 50%);
+    }
+    .instagram{
+        border-top: 4px solid;
+        border-image: linear-gradient(to right, #FDC468, #DF4996);
+        border-image-slice: 1;
+    }
+    .youtube{
+        border-top: 4px solid hsl(348, 97%, 39%);
+    }
+    article:hover{
+        background-color:hsl(227, 47%, 96%);
+    }
+}
+h2{
+    color: $colorgristext;
+    margin-top: 40px;
+    body.dark & {
+        color: white;
+    }
+}
+aside{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    article{
+        width: 220px;
+        height: 115px;
+        background-color: hsl(225, 100%, 98%);
+        padding: 10px 20px 10px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-top: 20px;
+        border-radius: 5px;
+        body.dark & {
+            background-color:hsl(232, 19%, 15%);
+        }
+        body.dark &:hover{
+            background-color:hsl(228, 28%, 20%);
+        }
+        .arriba{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            p{
+                margin:0;
+                font-weight: 700;
+                color: $colorgristext;
+                body.dark & {
+                    color: hsl(228, 34%, 66%);
+                }
+            }
+        }
+        .abajo{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            p{
+                margin:0;
+                font-weight: 700;
+                color: $colorgristext2;
+                font-size: 32px;
+                body.dark & {
+                    color: white;
+                }
+            }
+            .porcentaje{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                p.up{
+                    font-size: 14px;
+                    color: hsl(163, 72%, 41%);
+                    margin-left: 5px;
+                }
+                p.down{
+                    margin-left: 5px;
+                    font-size: 14px;
+                    color: hsl(356, 69%, 56%);
+                }
+            }
+        }
+    }
+    article:hover{
+        background-color:hsl(227, 47%, 96%);
+    }
+}
